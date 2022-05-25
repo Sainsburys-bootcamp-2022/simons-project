@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Noughts & Crosses</title>
+  <meta content="text/html; charset=utf-8"
+        http-equiv="content-type">
+  <link href="main.css"
+        rel="stylesheet"
+        type="text/css">
+</head>
+<body>
+  <h1>Noughts & Crosses</h1>
+  <p id="winner-display">the winner is <span id="winner-name"></span></p>
+  <div class="flex-container">
+  
+  <div class="player-one">
+     <div class="pic-grid">
+          <img src="https://media.istockphoto.com/photos/global-communication-network-around-planet-earth-in-space-worldwide-picture-id878855462?k=20&m=878855462&s=612x612&w=0&h=evKcqfZHWzfHaRahHtW0NR8C2GMNEmt_Ryv8GKv_8c4=" alt="">
+     </div>
+     <div class="input-grid">
+     <p id="hidden-player" style="display: none;"></p>
+     <input id="name-box" type="text" placeholder="Enter player 1 name" maxlength="15">
+     <button id="btn">Submit</button>
+     </div>
+  </div>
+  
+  
+  
+     <div id="grid">
+        <div class="row"
+        id="row-0">
+     <div class="column"
+          id="row-0-column-0"></div>
+     <div class="column"
+          id="row-0-column-1"></div>
+     <div class="column"
+          id="row-0-column-2"></div>
+          <div class="column"
+          id="row-0-column-3"></div>
+          <div class="column"
+          id="row-0-column-4"></div>
+          <div class="column"
+          id="row-0-column-5"></div>
+          <div class="column"
+          id="row-0-column-6"></div>
+   </div>
+   <div class="row"
+   id="row-1">
+<div class="column"
+     id="row-1-column-0"></div>
+<div class="column"
+     id="row-1-column-1"></div>
+<div class="column"
+     id="row-1-column-2"></div>
+     <div class="column"
+     id="row-1-column-3"></div>
+     <div class="column"
+     id="row-1-column-4"></div>
+     <div class="column"
+     id="row-1-column-5"></div>
+     <div class="column"
+     id="row-1-column-6"></div>
+</div>
+   <div class="row"
+        id="row-2">
+     <div class="column"
+          id="row-2-column-0"></div>
+     <div class="column"
+          id="row-2-column-1"></div>
+     <div class="column"
+          id="row-2-column-2"></div>
+          <div class="column"
+          id="row-2-column-3"></div>
+          <div class="column"
+          id="row-2-column-4"></div>
+          <div class="column"
+          id="row-2-column-5"></div>
+          <div class="column"
+          id="row-2-column-6"></div>
+   </div>
+   <div class="row"
+        id="row-3">
+     <div class="column"
+          id="row-3-column-0"></div>
+     <div class="column"
+          id="row-3-column-1"></div>
+     <div class="column"
+          id="row-3-column-2"></div>
+          <div class="column"
+          id="row-3-column-3"></div>
+          <div class="column"
+          id="row-3-column-4"></div>
+          <div class="column"
+          id="row-3-column-5"></div>
+          <div class="column"
+          id="row-3-column-6"></div>
+   </div>
+   <div class="row"
+        id="row-4">
+     <div class="column"
+          id="row-4-column-0"></div>
+     <div class="column"
+          id="row-4-column-1"></div>
+     <div class="column"
+          id="row-4-column-2"></div>
+          <div class="column"
+          id="row-4-column-3"></div>
+          <div class="column"
+          id="row-4-column-4"></div>
+          <div class="column"
+          id="row-4-column-5"></div>
+          <div class="column"
+          id="row-4-column-6"></div>
+   </div>
+    <div class="row"
+         id="row-5">
+      <div class="column"
+           id="row-5-column-0"></div>
+      <div class="column"
+           id="row-5-column-1"></div>
+      <div class="column"
+           id="row-5-column-2"></div>
+           <div class="column"
+           id="row-5-column-3"></div>
+           <div class="column"
+           id="row-5-column-4"></div>
+           <div class="column"
+           id="row-5-column-5"></div>
+           <div class="column"
+           id="row-5-column-6"></div>
+    </div>
+
+  </div>
+  <div class="player-two">
+     <div class="pic-grid">
+          <img src="https://www.istockphoto.com/resources/images/PhotoFTLP/P5-MAY-GettyImages-1083827840.jpg" alt="">
+     </div>
+     <div class="input-grid">
+          <p id="hidden-player2" style="display: none;"></p>
+          <input id="name-box2" type="text" placeholder="Enter player 1 name" maxlength="15">
+          <button id="btn2">Submit</button>
+     </div>
+  </div>
+  </div>
+  <button id="reset-button">Reset</button>
+  <p>Remember to open your dev tools by pressing F12 to view log messages and errors!</p>
+  <script src="connect-4-index.js"
+        type="text/javascript"></script> 
+  <script src="connect-connectors.js"
+        type="text/javascript"></script>
+</body>
+</html>
