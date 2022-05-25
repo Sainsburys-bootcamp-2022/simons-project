@@ -4,6 +4,7 @@
 let board = [[null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], 
 [null, null, null, null, null, null, null], [null, null, null, null, null, null, null]]
 
+// Test for nobody wins
 // let board = [
 //     ["yellow", "red", "red", "yellow", "yellow", "red", null],
 //     ["red", "yellow", "yellow", "red", "red", "yellow", "red"], 
@@ -22,80 +23,90 @@ const possibleWins = {
     yellowsWin: ["yellow", "yellow", "yellow", "yellow"]
 }
 
+// Function that creates an array of arrays. 4 arrays are created per row by grabbing 4 elements after the 0,1,2,3 element. Total amount is 6*6 == 24 arrays
 function acrossGrab() {
-    let a = []
+    let grabArray = []
 
     for(let j = 0; j < board.length; j++) {
         
-        a.push(board[j].map(element => element).splice(0,4))
-        a.push(board[j].map(element => element).splice(1,4))
-        a.push(board[j].map(element => element).splice(2,4))
-        a.push(board[j].map(element => element).splice(3,4))
+        grabArray.push(board[j].map(element => element).splice(0,4))
+        grabArray.push(board[j].map(element => element).splice(1,4))
+        grabArray.push(board[j].map(element => element).splice(2,4))
+        grabArray.push(board[j].map(element => element).splice(3,4))
     }
-    return a 
+    return grabArray 
     
 }
 
+// Function that creates an array of arrays. 3 arrays are created per column by grabbing 4 elements after the 0,1,2, element. Total amount is 7*3 == 21 arrays
 function downGrab() {
-    let a = []
+    let grabArray = []
 
     for(let j = 0; j < board[0].length; j++) {
-        a.push(board.map(element => element[j]).splice(0,4))
-        a.push(board.map(element => element[j]).splice(1,4))
-        a.push(board.map(element => element[j]).splice(2,4))
+        grabArray.push(board.map(element => element[j]).splice(0,4))
+        grabArray.push(board.map(element => element[j]).splice(1,4))
+        grabArray.push(board.map(element => element[j]).splice(2,4))
     }
-    return a 
+    return grabArray 
     
 }
 
+// Function that creates an array of arrays. 6 arrays are created diagonally from right to left(starting at row 2 index 0) and then left to right(starting at row 2 index 6) by grabbing 4 elements for each array. Total amount is 6*6 == 24 arrays
+// filter() is used in each for loop to remove undefined term from array
+// finally the return statement returns a filter of only the arrays that equal to 4
 function diagonalGrab() {
-    let a = []
+    let grabArray = []
 
     for(let j = -3; j <= 2; j++) {
 
         // // row 2 column 0 right diagonally
-        a.push(board.map((element, index) => (element[index-j])).splice(0,4).filter(element => element !== undefined))
-        a.push(board.map((element, index) => (element[index-j])).splice(1,4).filter(element => element !== undefined))
-        a.push(board.map((element, index) => (element[index-j])).splice(2,4).filter(element => element !== undefined))
+        grabArray.push(board.map((element, index) => (element[index-j])).splice(0,4).filter(element => element !== undefined))
+        grabArray.push(board.map((element, index) => (element[index-j])).splice(1,4).filter(element => element !== undefined))
+        grabArray.push(board.map((element, index) => (element[index-j])).splice(2,4).filter(element => element !== undefined))
 
     }
 
     for(let j = -1; j <= 5; j++) {
 
         // row 2 column 6 left diagonally
-        a.push(board.map((element, index) => (element[(element.length-j)-index])).filter(element => element !== undefined).splice(0,4))
-        a.push(board.map((element, index) => (element[(element.length-j)-index])).filter(element => element !== undefined).splice(1,4))
-        a.push(board.map((element, index) => (element[(element.length-j)-index])).filter(element => element !== undefined).splice(2,4))
+        grabArray.push(board.map((element, index) => (element[(element.length-j)-index])).filter(element => element !== undefined).splice(0,4))
+        grabArray.push(board.map((element, index) => (element[(element.length-j)-index])).filter(element => element !== undefined).splice(1,4))
+        grabArray.push(board.map((element, index) => (element[(element.length-j)-index])).filter(element => element !== undefined).splice(2,4))
 
     }
 
-    return a.filter(element => element.length === 4) 
+    return grabArray.filter(element => element.length === 4) 
         
 }
 
+// Check true or false if every acrossGrab index or diagonalGrab is equal to possible wins for yellow
 function isValidYellowAcrossDiagonalWin(i) {
 
     return  acrossGrab()[i].every((value, index) => value === possibleWins.yellowsWin[index]) || diagonalGrab()[i].every((value, index) => value === possibleWins.yellowsWin[index]) 
 }
 
+// Check true or false if every downGrab index is equal to possible wins for yellow
 function isValidYellowDownWin(i) {
 
     return downGrab()[i].every((value, index) => value === possibleWins.yellowsWin[index])
 
 }
 
+// Check true or false if every downGrab index is equal to possible wins for red
 function isValidRedDownWin(i) {
 
     return downGrab()[i].every((value, index) => value === possibleWins.redsWin[index])
 
 }
 
+// Check true or false if every acrossGrab index or diagonalGrab is equal to possible wins for red
 function isValidRedAcrossDiagonalWin(i) {
     
     return acrossGrab()[i].every((value, index) => value === possibleWins.redsWin[index]) || diagonalGrab()[i].every((value, index) => value === possibleWins.redsWin[index]) 
 
 }
 
+// Checks if the arrays in the board are not equal to null and possible wins
 function nobodyWins(i) {
     const nobodyReds =   !acrossGrab()[i].some((value) => value === null) && !acrossGrab()[i].every((value, index) => value === possibleWins.redsWin[index])
     const nobodyYellows =  !acrossGrab()[i].some((value) => value === null) && !acrossGrab()[i].every((value, index) => value === possibleWins.yellowsWin[index])
@@ -104,6 +115,7 @@ function nobodyWins(i) {
     return  (nobodyReds || nobodyYellows) && fullBoard
 } 
 
+// Uses a count function to check if the row of the column chsoen is empty or not
 function takeTurn(row, column) {
 
         let count = board.length-1
@@ -134,6 +146,8 @@ function takeTurn(row, column) {
 }
 
 
+// checks if there is winner by using isValid... functions
+// Uses 2 arrays because downGrab only has 21 arrays and using one loop had side effects as acrossGrab and diagonalGrab had 24 arrays.
 function checkWinner() {
     console.log("checkWinner")
     const player1 = document.getElementById("hidden-player").innerText
@@ -175,6 +189,7 @@ function checkWinner() {
     }
 }
 
+// Shows board when input text is filled out by grabbing the innerText from html
 function showBoard() {
     const checkElement = document.getElementById('hidden-player').innerText
     const checkElement2 = document.getElementById('hidden-player2').innerText  
