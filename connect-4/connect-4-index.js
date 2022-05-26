@@ -7,7 +7,7 @@ let board = [[null, null, null, null, null, null, null], [null, null, null, null
 // Test for nobody wins
 // let board = [
 //     ["yellow", "red", "red", "yellow", "yellow", "red", null],
-//     ["red", "yellow", "yellow", "red", "red", "yellow", "red"], 
+//     ["red", "yellow", "yellow", "red", "red", null, "red"], 
 //     ["yellow", "red", "red", "yellow", "yellow", "red", "yellow"], 
 //     ["red", "yellow", "yellow", "red", "red", "yellow", "red"], 
 //     ["yellow", "red", "red", "yellow", "yellow", "red", "yellow"],
