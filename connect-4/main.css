@@ -41,6 +41,7 @@ img {
 
 #grid {
     display: none;
+    background-color: rgb(31, 31, 227);
 }
 
 
@@ -54,6 +55,7 @@ img {
     justify-content: center;
     align-items: center;
     font-size: 80px;
+    border-radius: 1100px;
 }
 
 .row {
