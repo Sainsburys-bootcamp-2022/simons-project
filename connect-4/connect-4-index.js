@@ -64,7 +64,7 @@ function diagonalGrab() {
         grabArray.push(board.map((element, index) => (element[index-j])).splice(1,4).filter(element => element !== undefined))
         grabArray.push(board.map((element, index) => (element[index-j])).splice(2,4).filter(element => element !== undefined))
 
-        // 
+        // right to left diagonal
         // row 2 column 6 left diagonally
         grabArray.push(board.map((element, index) => (element[((element.length-2)-j)-index])).splice(0,4).filter(element => element !== undefined))
         grabArray.push(board.map((element, index) => (element[((element.length-2)-j)-index])).splice(1,4).filter(element => element !== undefined))
