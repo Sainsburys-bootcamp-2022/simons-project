@@ -6,8 +6,8 @@ let board = [[null, null, null, null, null, null, null], [null, null, null, null
 
 // Test for nobody wins
 // let board = [
-//     ["yellow", "red", "red", "yellow", "yellow", "red", null],
-//     ["red", "yellow", "yellow", "red", "red", null, "red"], 
+//     ["yellow", "red", "red", "yellow", "yellow", null, null],
+//     ["red", "yellow", "yellow", "red", "red", "yellow", "red"], 
 //     ["yellow", "red", "red", "yellow", "yellow", "red", "yellow"], 
 //     ["red", "yellow", "yellow", "red", "red", "yellow", "red"], 
 //     ["yellow", "red", "red", "yellow", "yellow", "red", "yellow"],
@@ -64,16 +64,23 @@ function diagonalGrab() {
         grabArray.push(board.map((element, index) => (element[index-j])).splice(1,4).filter(element => element !== undefined))
         grabArray.push(board.map((element, index) => (element[index-j])).splice(2,4).filter(element => element !== undefined))
 
-    }
-
-    for(let j = -1; j <= 5; j++) {
-
+        // 
         // row 2 column 6 left diagonally
-        grabArray.push(board.map((element, index) => (element[(element.length-j)-index])).filter(element => element !== undefined).splice(0,4))
-        grabArray.push(board.map((element, index) => (element[(element.length-j)-index])).filter(element => element !== undefined).splice(1,4))
-        grabArray.push(board.map((element, index) => (element[(element.length-j)-index])).filter(element => element !== undefined).splice(2,4))
+        grabArray.push(board.map((element, index) => (element[((element.length-2)-j)-index])).splice(0,4).filter(element => element !== undefined))
+        grabArray.push(board.map((element, index) => (element[((element.length-2)-j)-index])).splice(1,4).filter(element => element !== undefined))
+        grabArray.push(board.map((element, index) => (element[((element.length-2)-j)-index])).splice(2,4).filter(element => element !== undefined))
+         
 
     }
+    //
+    // for(let j = -1; j <= 5; j++) {
+
+    //     // row 2 column 6 left diagonally --- original transfer from noughts and crossea
+    //     grabArray.push(board.map((element, index) => (element[(element.length-j)-index])).splice(0,4).filter(element => element !== undefined))
+    //     grabArray.push(board.map((element, index) => (element[(element.length-j)-index])).splice(1,4).filter(element => element !== undefined))
+    //     grabArray.push(board.map((element, index) => (element[(element.length-j)-index])).splice(2,4).filter(element => element !== undefined))
+
+    // }
 
     return grabArray.filter(element => element.length === 4) 
         

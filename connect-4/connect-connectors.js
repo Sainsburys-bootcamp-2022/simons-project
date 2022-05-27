@@ -1,5 +1,3 @@
-// This file contains helper code beyond the first week "Intro to JavaScript" course content.
-// You should not have to make any changes in this file to get your game working.
 
 // Validate academite functions are available
 const functions = ["takeTurn", "getBoard","checkWinner",   "resetGame"];
