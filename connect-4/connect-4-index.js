@@ -75,7 +75,7 @@ function diagonalGrab() {
     //
     // for(let j = -1; j <= 5; j++) {
 
-    //     // row 2 column 6 left diagonally --- original transfer from noughts and crossea
+    //     // row 2 column 6 left diagonally --- original transfer from noughts and crosses
     //     grabArray.push(board.map((element, index) => (element[(element.length-j)-index])).splice(0,4).filter(element => element !== undefined))
     //     grabArray.push(board.map((element, index) => (element[(element.length-j)-index])).splice(1,4).filter(element => element !== undefined))
     //     grabArray.push(board.map((element, index) => (element[(element.length-j)-index])).splice(2,4).filter(element => element !== undefined))
