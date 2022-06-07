@@ -23,12 +23,12 @@ test('Board is empty at start', () => {
 
 
 test('Check winner', () => {
-    const board = [[null, null, null, null]]
+    const expectedResult = [[null, null, null, null]]
     
 
     const result = functions.acrossGrab()
 
-    expect(result).toEqual(expect.arrayContaining(board))
+    expect(result).toEqual(expect.arrayContaining(expectedResult))
 
 
 
