@@ -22,7 +22,7 @@ test('Board is empty at start', () => {
 })
 
 
-test('Check winner', () => {
+test('acrossGrab contains and array of 4 nulls', () => {
     const expectedResult = [[null, null, null, null]]
     
 
