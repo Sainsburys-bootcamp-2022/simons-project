@@ -243,38 +243,39 @@ if (typeof exports === 'possibleWins') {
     console.log("Running in Browser")
 }
 
+
+
+function playerOneClick() {
+    const input = document.getElementById("name-box")
+    const playerName = document.getElementById("name-box").value
+    const btn = document.getElementById("btn")
+    const showName = document.getElementById("hidden-player")
+    btn.style.display = "none"
+    input.style.display = "none"
+    showName.textContent = playerName
+    showName.style.display ="block"
+  }
+
+const btn = document.getElementById("btn")
+btn.addEventListener("click",playerOneClick)
+btn.addEventListener("click", showBoard)
+
+function playerTwoClick() {
+    const input = document.getElementById("name-box2")
+    const playerName = document.getElementById("name-box2").value
+    const btn = document.getElementById("btn2")
+    const showName = document.getElementById("hidden-player2")
+    btn.style.display = "none"
+    input.style.display = "none"
+    showName.textContent = playerName
+    showName.style.display ="block"
+  }
+
+const btn2 = document.getElementById("btn2")
+btn2.addEventListener("click", playerTwoClick)
+btn2.addEventListener("click", showBoard)
+
+
 module.exports = {getBoard,
-                    checkWinner,
-                    acrossGrab}
-
-// function playerOneClick() {
-//     const input = document.getElementById("name-box")
-//     const playerName = document.getElementById("name-box").value
-//     const btn = document.getElementById("btn")
-//     const showName = document.getElementById("hidden-player")
-//     btn.style.display = "none"
-//     input.style.display = "none"
-//     showName.textContent = playerName
-//     showName.style.display ="block"
-//   }
-
-// const btn = document.getElementById("btn")
-// btn.addEventListener("click",playerOneClick)
-// btn.addEventListener("click", showBoard)
-
-// function playerTwoClick() {
-//     const input = document.getElementById("name-box2")
-//     const playerName = document.getElementById("name-box2").value
-//     const btn = document.getElementById("btn2")
-//     const showName = document.getElementById("hidden-player2")
-//     btn.style.display = "none"
-//     input.style.display = "none"
-//     showName.textContent = playerName
-//     showName.style.display ="block"
-//   }
-
-// const btn2 = document.getElementById("btn2")
-// btn2.addEventListener("click", playerTwoClick)
-// btn2.addEventListener("click", showBoard)
-
-// console.log(document.getElementById()
+    checkWinner,
+    acrossGrab}
