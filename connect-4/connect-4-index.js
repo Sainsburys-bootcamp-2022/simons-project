@@ -264,9 +264,7 @@ function playerOneClick() {
     showName.style.display ="block"
   }
 
-// const btn = document.getElementById("btn")
-// btn.addEventListener("click",playerOneClick)
-// btn.addEventListener("click", showBoard)
+
 
 function playerTwoClick() {
     const input = document.getElementById("name-box2")
@@ -279,9 +277,16 @@ function playerTwoClick() {
     showName.style.display ="block"
   }
 
-// const btn2 = document.getElementById("btn2")
-// btn2.addEventListener("click", playerTwoClick)
-// btn2.addEventListener("click", showBoard)
+document.addEventListener('DOMContentLoaded', function () {const btn = document.getElementById("btn")
+btn.addEventListener("click",playerOneClick)
+btn.addEventListener("click", showBoard)
+
+})
+
+document.addEventListener('DOMContentLoaded', function () {const btn2 = document.getElementById("btn2")
+btn2.addEventListener("click", playerTwoClick)
+btn2.addEventListener("click", showBoard)
+})
 
 
 module.exports = {
