@@ -47,7 +47,7 @@ function downGrab() {
         grabArray.push(board.map(element => element[j]).splice(1,4))
         grabArray.push(board.map(element => element[j]).splice(2,4))
     }
-    return grabArray 
+    return grabArray  
     
 }
 
@@ -159,6 +159,8 @@ function checkWinner() {
     console.log("checkWinner")
     const player1 = document.getElementById("hidden-player").innerText
     const player2 = document.getElementById("hidden-player2").innerText
+
+    
         
     for(let i = 0; i< downGrab().length; i++) {
 
@@ -175,6 +177,7 @@ function checkWinner() {
         }
     
     }
+
     for(let i = 0; i< acrossGrab().length; i++) {
         if (isValidRedAcrossDiagonalWin(i)) {
             winner = true
