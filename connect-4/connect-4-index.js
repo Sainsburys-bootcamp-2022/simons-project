@@ -1,8 +1,13 @@
 // Make your changes to store and update game state in this file
 
 // Creates board and set hadGo to true and winner to false
-let board = [[null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], [null, null, null, null, null, null, null], 
-[null, null, null, null, null, null, null], [null, null, null, null, null, null, null]]
+let board = [   [null, null, null, null, null, null, null],
+                [null, null, null, null, null, null, null],
+                [null, null, null, null, null, null, null],
+                [null, null, null, null, null, null, null], 
+                [null, null, null, null, null, null, null],
+                [null, null, null, null, null, null, null]
+            ]
 
 // Test for nobody wins
 // let board = [
@@ -154,7 +159,7 @@ function takeTurn(row, column) {
 
 
 // checks if there is winner by using isValid... functions
-// Uses 2 arrays because downGrab only has 21 arrays and using one loop had side effects as acrossGrab and diagonalGrab had 24 arrays.
+// Uses 2 loops because downGrab only has 21 arrays and using one loop had side effects as acrossGrab and diagonalGrab had 24 arrays.
 function checkWinner() {
     console.log("checkWinner")
     const player1 = document.getElementById("hidden-player").innerText
@@ -259,9 +264,9 @@ function playerOneClick() {
     showName.style.display ="block"
   }
 
-const btn = document.getElementById("btn")
-btn.addEventListener("click",playerOneClick)
-btn.addEventListener("click", showBoard)
+// const btn = document.getElementById("btn")
+// btn.addEventListener("click",playerOneClick)
+// btn.addEventListener("click", showBoard)
 
 function playerTwoClick() {
     const input = document.getElementById("name-box2")
@@ -274,11 +279,17 @@ function playerTwoClick() {
     showName.style.display ="block"
   }
 
-const btn2 = document.getElementById("btn2")
-btn2.addEventListener("click", playerTwoClick)
-btn2.addEventListener("click", showBoard)
+// const btn2 = document.getElementById("btn2")
+// btn2.addEventListener("click", playerTwoClick)
+// btn2.addEventListener("click", showBoard)
 
 
-module.exports = {getBoard,
+module.exports = {
+    getBoard,
     checkWinner,
-    acrossGrab}
+    acrossGrab,
+    playerOneClick,
+    playerTwoClick,
+    showBoard
+    
+}
