@@ -80,13 +80,13 @@ for (let rowIndex = 0; rowIndex < 6; rowIndex++) {
     }
 }
 
-const btn = document.getElementById("btn")
-btn.addEventListener("click",playerOneClick)
-btn.addEventListener("click", showBoard)
+// const btn = document.getElementById("btn")
+// btn.addEventListener("click",playerOneClick)
+// btn.addEventListener("click", showBoard)
 
-const btn2 = document.getElementById("btn2")
-btn2.addEventListener("click", playerTwoClick)
-btn2.addEventListener("click", showBoard)
+// const btn2 = document.getElementById("btn2")
+// btn2.addEventListener("click", playerTwoClick)
+// btn2.addEventListener("click", showBoard)
 
 // Bind the click event for the reset button.
 const resetButton = document.getElementById("reset-button");

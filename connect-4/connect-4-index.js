@@ -277,9 +277,21 @@ function playerTwoClick() {
     showName.style.display ="block"
   }
 
-document.addEventListener('DOMContentLoaded', function () {const btn = document.getElementById("btn")
-btn.addEventListener("click",playerOneClick)
-btn.addEventListener("click", showBoard)
+
+function enableButton() {
+    if (document.getElementById('name-box1').value > 0) {
+        document.getElementById('start_button').disabled = false;
+    } else {
+        document.getElementById('start_button').disabled = true;
+    }
+}
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const btn = document.getElementById("btn")
+    btn.addEventListener("click",playerOneClick)
+    btn.addEventListener("click", showBoard)
 
 })
 
@@ -293,6 +305,8 @@ module.exports = {
     getBoard,
     checkWinner,
     acrossGrab,
+    isValidYellowAcrossDiagonalWin,
+    isValidYellowDownWin,
     playerOneClick,
     playerTwoClick,
     showBoard

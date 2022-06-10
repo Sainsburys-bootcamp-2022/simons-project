@@ -24,7 +24,7 @@ test('Board is empty at start', () => {
 })
 
 
-test('acrossGrab contains and array of 4 nulls', () => {
+test('acrossGrab contains an array of 4 nulls', () => {
     const expectedResult = [[null, null, null, null]]
     
 
@@ -32,6 +32,40 @@ test('acrossGrab contains and array of 4 nulls', () => {
 
     expect(result).toEqual(expect.arrayContaining(expectedResult))
 
+
+
+})
+
+
+test('isValidYellowAcrossDiagonalWin returns false', () => {
+
+    const expectedResult = false
+
+    const result = functions.isValidYellowAcrossDiagonalWin(0)
+
+    expect(result).toEqual(expectedResult)
+})
+
+test('isValidYellowAcrossDiagonalWin returns false for first array in grab', () => {
+
+    const expectedResult = false
+
+    const result = functions.isValidYellowAcrossDiagonalWin(0)
+
+    expect(result).toEqual(expectedResult)
+})
+
+
+
+
+
+test('isValidYellowAcrossDiagonalWin returns false for first array in grab', () => {
+    const expectedResult = false
+
+    const result = functions.isValidYellowDownWin(0)
+
+
+    expect(result).toEqual(expectedResult)
 
 
 })
